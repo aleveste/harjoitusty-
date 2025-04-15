@@ -74,20 +74,6 @@ class Board:
                     if 0 <= nx < self.grid_size and 0 <= ny < self.grid_size:
                         self.reveal_cells(nx, ny)
 
-    def ask_board_spec(self):
-        print("1 = Pieni (10 x 10 ruutua)")
-        print("2 = Medium (15 x 15 ruutua)")
-        print("3 = Iso (20 x 20 ruutua)")
-        choice = input("Valitse koko: ")
-
-        if choice == "1":
-            return 10, 15
-        if choice == "2":
-            return 15, 45
-        if choice == "3":
-            return 20, 75
-        return 10, 15
-
     def check_for_win(self):
         for y in range(self.grid_size):
             for x in range(self.grid_size):
