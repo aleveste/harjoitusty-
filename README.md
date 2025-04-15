@@ -4,6 +4,8 @@
 
 [Changelog](https://github.com/aleveste/harjoitusty-/blob/main/dokumentaatio/changelog.md)
 
+[Arkkitehtuuri](https://github.com/aleveste/harjoitusty-/blob/main/dokumentaatio/arkkitehtuuri.md)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
