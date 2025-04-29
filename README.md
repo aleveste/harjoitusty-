@@ -6,6 +6,10 @@
 
 [Arkkitehtuuri](https://github.com/aleveste/harjoitusty-/blob/main/dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/aleveste/harjoitusty-/blob/main/dokumentaatio/kayttoohje.md)
+
+[Release](https://github.com/aleveste/harjoitusty-/releases)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
