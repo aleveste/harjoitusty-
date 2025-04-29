@@ -14,3 +14,7 @@
 
 - Lisätty visuaalinen pelimuodon valikko
 - Pelin jälkeen näkyy nappi, mistä voi aloittaa uuden pelin tai poistua
+
+## Viikko 6
+
+- Lisätty GameLogic ja BoardRender luokat, paremmin jakamaan tehtävät luokkien välillä niin, että logiikka ja käyttöliittymä ovat erillään.
