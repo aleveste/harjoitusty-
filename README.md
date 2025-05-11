@@ -18,6 +18,8 @@ Sovellusta on testattu versiolla 3.10, sitä vanhemmilla versiolla voi esiintyä
 
 [Release](https://github.com/aleveste/harjoitusty-/releases)
 
+[Testausdokumentti](https://github.com/aleveste/harjoitusty-/blob/main/dokumentaatio/testaus.md)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
