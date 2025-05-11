@@ -4,7 +4,7 @@ Sovelluslogiikkaan littyvät testit on suoritettu automaattisilla yksikkötestei
 
 ## Testattavat luokat
 
-Luokat mitkä testattiin automatisoidusti ovat Board, GameLogic ja AuthManager. Testit ovat suurimmalta osalta yksinkertaisia yksikkötestejä, mutta AuthManagerin testeihin käytettiin teko-tietokantaa hyödyksi.
+Luokat mitkä testattiin automatisoidusti ovat Board, GameLogic ja AuthManager. Testit ovat suurimmalta osalta yksinkertaisia yksikkötestejä, mutta AuthManagerin testeihin käytettiin testitietokantaa hyödyksi.
 
 Yhdessä nämä kolme luokkaa saivat haarautumakattavuuden 84% mistä näkyy kuva alapuolella
 
