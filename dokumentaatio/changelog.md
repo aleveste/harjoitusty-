@@ -18,3 +18,7 @@
 ## Viikko 6
 
 - Lisätty GameLogic ja BoardRender luokat, paremmin jakamaan tehtävät luokkien välillä niin, että logiikka ja käyttöliittymä ovat erillään.
+
+## Loppupalautus
+
+- Lisätty kirjautuminen, tulosnäkymä, sekä lisää testejä. Lisäksi lisätty alihakemistoja mihin sovelluslogiikka ja käyttöliittymä on lisätty erillään toisistaan.
