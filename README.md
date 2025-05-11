@@ -1,6 +1,6 @@
 # Miinaharava
 
-Sovelluksen sisällä käyttäjät voivat pelata kuuluisaa peliä miinaharavaa, missä tavoitteena on tyhjentää pelilauta tyhjistä ruuduista, jättämällä miinoitetut ruudut koskematta. Käyttäjä voi kirjautua sisään, ja nähdä viimeisimmät pelinsä, mistä hän näkee ajan, lopputuloksen, sekä pelilaudan koko.
+Sovelluksen sisällä käyttäjät voivat pelata kuuluisaa peliä miinaharavaa, missä tavoitteena on tyhjentää pelilauta tyhjistä ruuduista, jättämällä miinoitetut ruudut koskematta. Käyttäjä voi kirjautua sisään, ja nähdä pelihistorian, joka sisältää ajan, lopputuloksen, sekä pelilaudan koon.
 
 ## Huomio Python-versiosta
 
