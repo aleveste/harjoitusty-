@@ -5,4 +5,6 @@
 | 8.4 | 7   | ajastus, pelimuodon valitseminen, uudelleen aloittaminen, pylint virheiden korjaamista|
 | 15.4 | 6   | käyttöliittymän parantamista, pylint virheiden korjaamista|
 | 29.4 | 7   | Logiikan ja käyttöliittymän erittelyä, uusia testejä, dokumentaatiota|
-Summa: 29
+| 10.4 | 7   | Kirjautuminen, tulosnäkymä, testejä, loppuviimeistelyä|
+| 11.4 | 8   | Kirjautuminen, tulosnäkymä, testejä, loppuviimeistelyä, dokumentaatiota|
+Summa: 44
