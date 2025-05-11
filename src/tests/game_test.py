@@ -1,8 +1,8 @@
 import unittest
 import sys
 sys.path.append("src")
-from board import Board
-from game_logic import GameLogic
+from game.board import Board
+from game.game_logic import GameLogic
 
 class TestGameLogic(unittest.TestCase):
 

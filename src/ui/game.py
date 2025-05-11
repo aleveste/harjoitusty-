@@ -1,8 +1,11 @@
 # pylint: disable=import-error
 import sys
 import pygame
-from game_logic import GameLogic
-from board_render import BoardRenderer
+from game.game_logic import GameLogic
+from ui.board_render import BoardRenderer
+from game.auth import AuthManager
+
+auth = AuthManager()
 
 class Game:
     """
@@ -23,12 +26,13 @@ class Game:
         restart_rect (pygame.Rect): Painike, jota voidaan klikata uuden pelin aloittamiseksi.
         quit_rect (pygame.Rect): Painike, jota voidaan klikata pelistä poistumiseksi.  
     """
-    def __init__(self):
+    def __init__(self, username):
         """
         Alustaa uuden pelin. Kysyy pelilaudan koon ja miinamäärän, jonka jälkeen se luo
         pelilogiikan sekä piirtojärjestelmän, ja asettaa peli-ikkunan sekä ajan.
         """
         pygame.init()
+        self.username = username
         self.grid_size, self.num_mines = self.ask_board_spec()
 
         self.logic = GameLogic(self.grid_size, self.num_mines)
@@ -48,6 +52,7 @@ class Game:
         self.running = True
         self.restart_rect = None
         self.quit_rect = None
+        self.results_rect = None
 
     def ask_board_spec(self):
         """
@@ -132,16 +137,20 @@ class Game:
         status_text = self.font.render(message, True, color)
         self.screen.blit(status_text, (140, self.grid_size * self.logic.board.cell_size + 5))
 
-        self.restart_rect = (pygame.Rect(50, self.grid_size *
-                                         self.logic.board.cell_size + 35, 120, 30))
-        self.quit_rect = pygame.Rect(230, self.grid_size * self.logic.board.cell_size + 35, 120, 30)
+        self.restart_rect = pygame.Rect(30, self.grid_size * self.logic.board.cell_size + 35, 120, 30)
+        self.results_rect = pygame.Rect(160, self.grid_size * self.logic.board.cell_size + 35, 120, 30)
+        self.quit_rect = pygame.Rect(290, self.grid_size * self.logic.board.cell_size + 35, 120, 30)
 
         pygame.draw.rect(self.screen, (0, 200, 0), self.restart_rect, border_radius=6)
+        pygame.draw.rect(self.screen, (70, 130, 180), self.results_rect, border_radius=6)
         pygame.draw.rect(self.screen, (200, 0, 0), self.quit_rect, border_radius=6)
 
         restart_text = self.font.render("Uusi peli", True, (255, 255, 255))
+        results_text = self.font.render("Tulokset", True, (255, 255, 255))
         quit_text = self.font.render("Poistu", True, (255, 255, 255))
+
         self.screen.blit(restart_text, (self.restart_rect.x + 10, self.restart_rect.y + 5))
+        self.screen.blit(results_text, (self.results_rect.x + 10, self.results_rect.y + 5))
         self.screen.blit(quit_text, (self.quit_rect.x + 25, self.quit_rect.y + 5))
 
     def handle_events(self):
@@ -174,8 +183,11 @@ class Game:
         if self.game_over:
             if self.restart_rect.collidepoint(event.pos):
                 self.running = False
-                new_game = Game()
+                new_game = Game(self.username)
                 new_game.run()
+            elif self.results_rect.collidepoint(event.pos):
+                from ui.results_screen import show_results_screen  
+                show_results_screen(self.screen, self.username)
             elif self.quit_rect.collidepoint(event.pos):
                 self.running = False
         else:
@@ -197,12 +209,14 @@ class Game:
                 self.game_over = True
                 self.final_time = (pygame.time.get_ticks() - self.start_ticks) // 1000
                 self.game_lost = True
+                auth.save_score(self.username, self.grid_size, self.final_time, False)
             else:
                 self.logic.board.reveal(x, y)
                 if self.logic.board.check_win():
                     self.game_over = True
                     self.final_time = (pygame.time.get_ticks() - self.start_ticks) // 1000
                     self.game_lost = False
+                    auth.save_score(self.username, self.grid_size, self.final_time, True)
         elif button == 3:
             if (x, y) in self.logic.board.flags:
                 self.logic.board.flags.remove((x, y))
@@ -221,11 +235,3 @@ class Game:
         self.game_lost = False
         self.start_ticks = pygame.time.get_ticks()
         self.final_time = None
-
-
-def main():
-    game = Game()
-    game.run()
-
-if __name__ == "__main__":
-    main()

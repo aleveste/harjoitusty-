@@ -1,7 +1,7 @@
 import unittest
 import sys
 sys.path.append("src")
-from board import Board
+from game.board import Board
 
 class TestMiinaharava(unittest.TestCase):
 
