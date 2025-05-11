@@ -1,3 +1,11 @@
+# Miinaharava
+
+Sovelluksen sisällä käyttäjät voivat pelata kuuluisaa peliä miinaharavaa, missä tavoitteena on tyhjentää pelilauta tyhjistä ruuduista, jättämällä miinoitetut ruudut koskematta. Käyttäjä voi kirjautua sisään, ja nähdä viimeisimmät pelinsä, mistä hän näkee ajan, lopputuloksen, sekä pelilaudan koko.
+
+## Huomio Python-versiosta
+
+Sovellusta on testattu versiolla 3.10, sitä vanhemmilla versiolla voi esiintyä ongelmia.
+
 [Työaikakirjanpito](https://github.com/aleveste/harjoitusty-/blob/main/dokumentaatio/tuntikirjanpito.md)
 
 [Vaatimusmäärittely](https://github.com/aleveste/harjoitusty-/blob/main/dokumentaatio/vaatimusmaarittely.md)
